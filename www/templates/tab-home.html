@@ -1,0 +1,41 @@
+<ion-view view-title="HOME" class="headercolor">
+  <ion-content class="padding">
+    <div class="list card">
+      <div class="item item-divider">
+        <i class="fa fa-inr"></i> &nbsp
+        RBI DATA<span class='item-note' ng-show="rbidata" style="color:white !important">for {{Dates.getDate(rbidata.dated)}}</span>
+      </div>
+      <div class="item item-body">
+        <div class="item-text-wrap" style="border-top:0px;">
+          <b>Treasury Holdings</b><span class='item-note' style="color:green;">Rs {{Commas.getcomma(rbidata.datadetails[16].amount)}}</span>
+        </div>
+        <div class="item-text-wrap">
+          <b>W&M Outstanding</b><span class='item-note' style="color:red;">Rs {{Commas.getcomma(rbidata.datadetails[17].amount)}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="list card">
+      <div class="item item-divider">
+        <i class="fa fa-bars"></i> &nbsp;
+        BILLS<span class='item-note' ng-show="!mreload" style="color:white !important">fetching data ...</span>
+      </div>
+      <div class="item item-body">
+        <div class="item-text-wrap" style="border-top:0px;">
+          <b>Total Bills</b><span class='item-note'>Rs {{Commas.getcomma(totamt())}}</span>
+        </div>
+        <div class="item-text-wrap">
+          <b>Bills in Scrutiny</b><span class='item-note'>Rs {{Commas.getcomma(gettotyetamt())}}</span>
+        </div>
+        <div class="item-text-wrap">
+          <b>Bills for Authorisation</b><span class='item-note'>Rs {{Commas.getcomma(totmamt())}}</span>
+        </div>
+        <div class="item-text-wrap">
+          <b>Commitment</b><span class='item-note'>Rs {{Commas.getcomma(totcommamt())}}</span>
+        </div>
+        <button class="button button-block button-dark" ng-click="reload()" ng-show="mreload">
+          Refresh Data
+        </button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

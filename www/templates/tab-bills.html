@@ -1,0 +1,97 @@
+<ion-view view-title="BILLS">
+  <ion-content class="padding">
+    <!-- <div class="list card">
+      <div class="item item-divider">BILLS</div>
+      <div class="item item-body">
+        <div class="item-text-wrap center-align" style="border-top:0px;">
+          <b>Total Bills</b>(<span>{{totcount()}}</span>)<span class="item-note">Rs {{Commas.getcomma(totamt())}}</span>
+        </div>
+        <div class="item-text-wrap center-align">
+          <b>Bills in Scrutiny</b>(<span>{{gettotyetcount()}}</span>)<span class="item-note">Rs {{Commas.getcomma(gettotyetamt())}}</span>
+        </div>
+        <div class="item-text-wrap center-align">
+          <b>Bills For Authorisation</b>(<span>{{totmcount()}}</span>)<span class="item-note">Rs {{Commas.getcomma(totmamt())}}</span>
+        </div>
+      </div>
+    </div> -->
+    <button class="button button-block button-dark" ng-click="reload()" ng-show="mreload">
+      Refresh Data
+    </button>
+    <div class="list card">
+      <a class="item item-divider" href="#/tab/pd">
+        <i class="fa fa-bars"></i> &nbsp;
+        PD CHEQUES<span class='item-note' ng-show="!mreload" style="color:white !important">fetching data ...</span></a>
+      <div class="item item-body">
+        <div class="item-text-wrap center-align" style="border-top:0px;">
+          <b>Total Bills</b>(<span>{{pddata.count}}</span>)<span class="item-note">Rs {{Commas.getcomma(pddata.amt)}}</span>
+        </div>
+        <div class="item-text-wrap center-align">
+          <b>Bills In Scrutiny</b>(<span>{{getpdyetcount()}}</span>)<span class="item-note">Rs {{Commas.getcomma(getpdyetamt())}}</span>
+        </div>
+        <div class="item-text-wrap center-align">
+          <b>Bills For Authorisation</b>(<span>{{pddata.mcount}}</span>)<span class="item-note">Rs {{Commas.getcomma(pddata.mamt)}}</span>
+        </div>
+        <div class="item-text-wrap center-align">
+          <b>Commitment</b>(<span>{{pddata.commcount}}</span>)<span class="item-note">Rs {{Commas.getcomma(pddata.commamt)}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="list card">
+      <a class="item item-divider" href="#/tab/pao">
+        <i class="fa fa-bookmark-o"></i>&nbsp;
+        PAO BILLS<span class='item-note' ng-show="!mreload" style="color:white !important">fetching data ...</span></a>
+      <div class="item item-body">
+        <div class="item-text-wrap center-align" style="border-top:0px;">
+          <b>Total Bills</b>(<span>{{bmsdata.count}}</span>)<span class="item-note">Rs {{Commas.getcomma(bmsdata.amt)}}</span>
+        </div>
+        <div class="item-text-wrap center-align">
+          <b>Bills In Scrutiny</b>(<span>{{getbmsyetcount()}}</span>)<span class="item-note">Rs {{Commas.getcomma(getbmsyetamt())}}</span>
+        </div>
+        <div class="item-text-wrap center-align">
+          <b>Bills For Authorisation</b>(<span>{{bmsdata.mcount}}</span>)<span class="item-note">Rs {{Commas.getcomma(bmsdata.mamt)}}</span>
+        </div>
+        <div class="item-text-wrap center-align">
+          <b>Commitment</b>(<span>{{bmsdata.commcount}}</span>)<span class="item-note">Rs {{Commas.getcomma(bmsdata.commamt)}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="list card">
+      <a class="item item-divider" href="#/tab/dta">
+        <i class="fa fa-university"></i>&nbsp;
+        DTA BILLS<span class='item-note' ng-show="!mreload" style="color:white !important">fetching data ...</span></a>
+      <div class="item item-body">
+        <div class="item-text-wrap center-align" style="border-top:0px;">
+          <b>Total Bills</b>(<span>{{dtadata.count}}</span>)<span class="item-note">Rs {{Commas.getcomma(dtadata.amt)}}</span>
+        </div>
+        <div class="item-text-wrap center-align">
+          <b>Bills In Scrutiny</b>(<span>{{getdtayetcount()}}</span>)<span class="item-note">Rs {{Commas.getcomma(getdtayetamt())}}</span>
+        </div>
+        <div class="item-text-wrap center-align">
+          <b>Bills For Authorisation</b>(<span>{{dtadata.mcount}}</span>)<span class="item-note">Rs {{Commas.getcomma(dtadata.mamt)}}</span>
+        </div>
+        <div class="item-text-wrap center-align">
+          <b>Commitment</b>(<span>{{dtadata.commcount}}</span>)<span class="item-note">Rs {{Commas.getcomma(dtadata.commamt)}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="list card">
+      <a class="item item-divider" href="#/tab/dwa">
+        <i class="fa fa-road"></i>&nbsp;
+        DWA BILLS<span class='item-note' ng-show="!mreload" style="color:white !important">fetching data ...</span></a>
+      <div class="item item-body">
+        <div class="item-text-wrap center-align" style="border-top:0px;">
+          <b>Total Bills</b>(<span>{{dwadata.count}}</span>)<span class="item-note">Rs {{Commas.getcomma(dwadata.amt)}}</span>
+        </div>
+        <div class="item-text-wrap center-align">
+          <b>Bills In Scrutiny</b>(<span>{{getdwayetcount()}}</span>)<span class="item-note">Rs {{Commas.getcomma(getdwayetamt())}}</span>
+        </div>
+        <div class="item-text-wrap center-align">
+          <b>Bills For Authorisation</b>(<span>{{dwadata.mcount}}</span>)<span class="item-note">Rs {{Commas.getcomma(dwadata.mamt)}}</span>
+        </div>
+        <div class="item-text-wrap center-align">
+          <b>Commitment</b>(<span>{{dwadata.commcount}}</span>)<span class="item-note">Rs {{Commas.getcomma(dwadata.commamt)}}</span>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

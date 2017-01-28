@@ -1,0 +1,49 @@
+<ion-view view-title="DWA" class="headercolor">
+  <ion-content style="background:#989572;">
+  	<div class="list card">
+      <div class="item item-divider bigfont" ng-click="showPop()">Total Non-Work<span class="smallfont">({{totalnos}})</span><span class="item-note">Rs {{Commas.getcomma(totals)}}</span></div>
+      <div class="item item-body">
+        <div class="item-text-wrap" style="border-top:0px;">
+          <b>Non-Plan : </b><span>{{ntotalnos}}</span><span class="item-note">Rs {{Commas.getcomma(ntotals)}}</span>
+        </div>
+        <div class="item-text-wrap" style="border-top:0px;">
+          <b>Plan : </b><span>{{ptotalnos}}</span><span class="item-note">Rs {{Commas.getcomma(ptotals)}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="list card">
+      <div class="item item-divider bigfont" ng-click="showPop()">Total Work<span class="smallfont">({{wtotalnos}})</span><span class="item-note">Rs {{Commas.getcomma(wtotals)}}</span></div>
+      <div class="item item-body">
+        <div class="item-text-wrap" style="border-top:0px;">
+          <b>Non-Plan : </b><span>{{wntotalnos}}</span><span class="item-note">Rs {{Commas.getcomma(wntotals)}}</span>
+        </div>
+        <div class="item-text-wrap" style="border-top:0px;">
+          <b>Plan : </b><span>{{wptotalnos}}</span><span class="item-note">Rs {{Commas.getcomma(wptotals)}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="list card" ng-repeat="chq in chqs" ng-show="ctotal(chq)!=0">
+      <div class="item item-divider bigfont" ng-click="showAction(chq)">{{chq[0]}}<span class="smallfont">({{ctotal(chq)}})</span><span class="item-note">Rs {{Commas.getcomma(stotal(chq))}}</span></div>
+      <div class="item item-body">
+        <div class="item-text-wrap" style="border-top:0px;">
+          <b>Non-Plan : </b><span>{{chq[1]}}</span><span class="item-note">Rs {{Commas.getcomma(chq[2])}}</span>
+        </div>
+        <div class="item-text-wrap" style="border-top:0px;">
+          <b>Plan : </b><span>{{chq[3]}}</span><span class="item-note">Rs {{Commas.getcomma(chq[4])}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="list card" ng-repeat="chq in wchqs" ng-show="ctotal(chq)!=0">
+      <div class="item item-divider bigfont" ng-click="showAction(chq)">{{chq[0]}}<span class="smallfont">({{ctotal(chq)}})</span><span class="item-note">Rs {{Commas.getcomma(stotal(chq))}}</span></div>
+      <div class="item item-body">
+        <div class="item-text-wrap" style="border-top:0px;">
+          <b>Non-Plan : </b><span>{{chq[1]}}</span><span class="item-note">Rs {{Commas.getcomma(chq[2])}}</span>
+        </div>
+        <div class="item-text-wrap" style="border-top:0px;">
+          <b>Plan : </b><span>{{chq[3]}}</span><span class="item-note">Rs {{Commas.getcomma(chq[4])}}</span>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+Hello

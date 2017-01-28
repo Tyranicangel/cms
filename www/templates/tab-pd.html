@@ -1,0 +1,24 @@
+<ion-view view-title="PD" class="headercolor">
+  <ion-content style="background:#989572;">
+    <div class="card">
+      <div class="item item-divider bigfont" style="font-size:12px;">
+        Total Amount Rs {{Commas.getcomma(totals(chqs))}} 
+        <button ng-click="showPop()" class="button button-positive button-small item-note" style="padding:4px 5px;">Approve All</button>
+      </div>
+    </div>
+    <div class="list card" ng-repeat="chq in chqs">
+      <div class="item item-divider bigfont" ng-click="showAction(chq)">Cheque No:{{chq.chequeno}} <span class="smallfont">Rs {{Commas.getcomma(chq.partyamount)}}</span><span class="item-note">{{Dates.getDate(chq.transdate)}}</span></div>
+      <div class="item item-body">
+        <div class="item-text-wrap" style="border-top:0px;">
+          <b>DDO : </b><span>{{chq.userdesc}}</span>
+        </div>
+        <div class="item-text-wrap" style="border-top:0px;">
+          <b>HOA : </b><span>{{chq.schemename}}</span>
+        </div>
+        <div class="item-text-wrap" style="border-top:0px;">
+          <b>Purpose : </b><span>{{chq.purpose}}</span>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

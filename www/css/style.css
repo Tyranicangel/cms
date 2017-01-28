@@ -1,0 +1,91 @@
+/* Empty. Add your own CSS if you like */
+.item-text-wrap{
+	border-top:1px solid #f5f5f5;
+	font-size:12px;
+	padding:5px;
+}
+.center-align2{
+	text-align:center;
+}
+.item-note{
+	font-size:12px;
+}
+.right-align{
+	text-align: center;
+}
+.linkclass{
+	color:#444;
+	text-decoration: none;
+	background: #f5f5f5;
+}
+.bigfont{
+	font-size:14px;
+}
+.smallfont{
+	font-size:12px;
+	margin-left:5px;
+}
+/*.scroll-content
+{
+	background: #989572 !important;
+}*/
+.padding
+{
+	/*background: #989572;*/
+	background: #989572 url("../img/apl.png") no-repeat fixed center;
+}
+.title
+{
+	background: #392A16;
+	color: white !important;
+}
+.tab-title
+{
+	color: white;
+}
+.item-text-wrap
+{
+	border-top:1px solid #989572;
+}
+.bar
+{
+	background: #392A16 !important;
+}
+.item-body
+{
+	background: #ECE4B7 !important;
+}
+.item-divider
+{
+	background: #F49D37 !important;
+	color:white !important;
+	font-family: open sans;
+	font-weight: bold;
+}
+.item-note
+{
+	color: #392A16;
+}
+.tab-nav
+{
+	background: #392A16 !important;
+
+}
+.icon
+{
+	color: white !important;
+}
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Open Sans Light'), local('OpenSans-Light'), url(../img/open_sans.woff) format('woff');
+}
+.item{
+	border:0px !important;
+}
+#selectdate{
+	background: #ccc9a4;
+	color:#ffffff;
+	outline: none;
+}

@@ -1,0 +1,25 @@
+<ion-view view-title="RBI DATA">
+  <ion-content style="background:#989572;">
+    <div class="list">
+      <label class="item item-input item-stacked-label" style="border:0px;margin-right:10px;">
+        <span class="input-label" style="color:white;">Select Date :</span>
+        <input type="date" ng-model="selectdate" id='selectdate' style="padding-left:5px;">
+      </label>
+      <button class="button button-block button-dark" ng-click="searchdate(selectdate)">
+        Search
+      </button>
+    </div>
+    <div class="list card">
+      <div class="item item-divider">Rbi Data for :{{Dates.getDate(rbidata.dated)}}</div>
+      <div class="item item-body" ng-repeat="detail in rbidata.datadetails">
+        <div class="item-text-wrap center-align2">
+          <b>{{detail.details.detailname}}</b>
+        </div>
+        <div class="item-text-wrap right-align">
+          Rs {{Commas.getcomma(detail.amount)}}
+        </div>
+      </div>
+    </div>
+  </div>
+  </ion-content>
+</ion-view>
